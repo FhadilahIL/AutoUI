@@ -13,13 +13,32 @@ class Settings:
         self.browser.find_element(By.XPATH, xPathAccountSettings).click()
         time.sleep(1)
 
-    def checkPhoneNumber(self, email):
-        xPathPhoneNumberGroup = '(//div[@class="css-oh71wi"])[5]'
-        self.wait.until(Ui.presence_of_element_located((By.XPATH, xPathPhoneNumberGroup)))
-        try:
-            if bool(self.browser.find_element(By.XPATH, '//a[@data-testid="add-phone-link"]')) == True:
-                print(email + ' : Nomor Tidak Ada')
-        except:
-            xPathPhoneNumber = '(//div[@class="css-oh71wi"])[5]/span[2]'
-            print(email +' : '+ self.browser.find_element(By.XPATH, xPathPhoneNumber).text)
-        time.sleep(1)
+    def biodataDiriTab(self):
+        xPathBiodataDiri = '//button[@data-testid="tab-bio"]'
+        self.wait.until(Ui.presence_of_element_located((By.XPATH, xPathBiodataDiri)))
+        self.browser.find_element(By.XPATH, xPathBiodataDiri).click()
+    
+    def alamatTab(self):
+        xPathAlamat = '//button[@data-testid="tab-adress"]'
+        self.wait.until(Ui.presence_of_element_located((By.XPATH, xPathAlamat)))
+        self.browser.find_element(By.XPATH, xPathAlamat).click()
+    
+    def pembayaranTab(self):
+        xPathPembayaran = '//button[@data-testid="tab-payment"]'
+        self.wait.until(Ui.presence_of_element_located((By.XPATH, xPathPembayaran)))
+        self.browser.find_element(By.XPATH, xPathPembayaran).click()
+    
+    def bankTab(self):
+        xPathBank = '//button[@data-testid="tab-bank"]'
+        self.wait.until(Ui.presence_of_element_located((By.XPATH, xPathBank)))
+        self.browser.find_element(By.XPATH, xPathBank).click()
+    
+    def notifTab(self):
+        xPathNotif = '//button[@data-testid="tab-notif"]'
+        self.wait.until(Ui.presence_of_element_located((By.XPATH, xPathNotif)))
+        self.browser.find_element(By.XPATH, xPathNotif).click()
+    
+    def googleAuthenticatorTab(self):
+        xPathGoogleAuthenticator = '//button[@data-testid="tab-ga"]'
+        self.wait.until(Ui.presence_of_element_located((By.XPATH, xPathGoogleAuthenticator)))
+        self.browser.find_element(By.XPATH, xPathGoogleAuthenticator).click()

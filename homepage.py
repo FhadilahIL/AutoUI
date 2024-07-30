@@ -21,6 +21,16 @@ class Homepage:
         action.move_to_element(self.browser.find_element(By.XPATH, xPathAccountMenu)).perform()
         time.sleep(1)
 
+    def orderListMenu(self):
+        xPathOrderListMenu = '(//a[@class="css-ifllvv"])[6]'
+        self.wait.until(Ui.presence_of_element_located((By.XPATH, xPathOrderListMenu)))
+        self.browser.find_element(By.XPATH, xPathOrderListMenu).click()
+
+    def wishListMenu(self):
+        xPathWishListMenu = '(//a[@class="css-ifllvv"])[7]'
+        self.wait.until(Ui.presence_of_element_located((By.XPATH, xPathWishListMenu)))
+        self.browser.find_element(By.XPATH, xPathWishListMenu).click()
+
     def loginFunc(self, email, password):
         # Login Button
         xPathLoginButton = '//button[@data-testid="btnHeaderLogin"]'
